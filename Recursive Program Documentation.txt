@@ -1,0 +1,72 @@
+
+
+
+Nathan Reichert
+
+Saint Cloud State University
+
+CSCI 301
+
+Project 3
+
+Recursive Functions
+
+Due:  21 September, 2015
+
+
+
+
+Nathan Reichert
+cs301106
+Section 1
+Project 3-Recursive Functions
+Due 21 September, 2015
+
+Design Document
+
+Intro:
+      To begin, recursion is a method in which a designed function calls itself until a base case is reached, and then successfully completes. In this case, three recursive functions were created in total, to be used in three differently purposed programs. The first program takes input in the form of an integer, and outputs in reverse order the even digits of the input integer. The second program is a Towers of Hanoi puzzle “guide” program, which is to take an integer as input for the number of discs for which to solve the puzzle. The program then outputs the set of instructions on how to solve the puzzle with the input number of discs. The third and final program takes an integer as input, and gives the prime factorization of that integer as the output.
+Data Structures:
+	These programs mainly utilize Boolean expressions, loops, as well as counters to achieve solutions to the problems proposed in each program. Nothing overly complex or outstanding was used to solve the problems proposed by these programs’ guidelines, other than recursion, which will be mentioned in the “Functions” section.
+Functions:
+	The three programs each have recursive functions designed specifically to solve each problem. When these functions are called, certain base cases are tested, and if the problem is more complex, the recursive function calls itself with a smaller sub-problem to be solved as its parameters until a base case is achieved.
+Main Program:
+	The first main program prompts a user for an integer, which gets passed to a recursive function which outputs the even digits of the integer in reverse order. The recursion accepts the input integer divided by 10 until a base case is reached which is when the program successfully terminates. The second program, the Towers of Hanoi puzzle, operates on a similar mechanism, except accepts an integer number of discs to “manipulate.” The third program, prime factorization, accepts a positive integer as input, passes the integer to a recursive function that calls itself with the input integer divided by a counter value as the parameter, until the base case is reached and it outputs the prime factorization of the original input number.
+
+Nathan Reichert
+cs301106
+Section 1
+Project 3-Recursive Functions
+Due 21 September, 2015
+
+User Document
+
+	The first program, the even digit program, begins with a prompt for an integer, which gets passed to a recursive function within the program, and the program simply outputs the even digits of the integer in reverse order in the terminal.
+	The second program, the Towers of Hanoi puzzle guide, begins with a prompt for an integer, which is to represent the number of discs to assume in the puzzle. The integer gets passed to the program’s recursive function which outputs the set of instructions to solve the puzzle with the input number of discs.
+	The third program, the prime factorization program, prompts the user for an integer input, which gets passed to the program’s recursive function, and the program then outputs the prime factorization of the input integer. 
+
+To compile the first program in the CSCI2 unix terminal, enter:  g++ even_digit.cpp
+To run the program, after compiling, in the unix terminal, enter: a.out
+
+To compile the second program, enter: g++ hanoi.cpp
+To run the program, after compiling, in the unix terminal, enter: a.out
+
+To compile the third program, enter: g++ p_factor.cpp
+To run the program, after compiling, in the unix terminal, enter: a.out
+
+
+
+
+
+Nathan Reichert
+cs301106
+Section 1
+Project 3-Recursive Functions
+Due 21 September, 2015
+
+	In summation, these programs did not use any severely complex data structures, but rather a clever usage of functions calling themselves with smaller versions of the main problems as their arguments, until base cases are reached in each of the situations.
+
+	There is not a specific piece of knowledge which I gained from this project and its programs, but rather a much stronger general understanding of the implications of recursion. Recursion may not always be the optimal method for solving a problem, but it is indeed a very powerful tool when it is appropriate to use. As with any skill, practice improves ability. The practice with which these programs challenged me helped me more strongly establish the skills necessary to work with recursive functions.
+
+	One question proposed is in reference to the Big-O of the Towers of Hanoi function’s time. In this case, it appears that the Big-O is (2^n)-1. I believe this is due to the fact that for the number of discs, the function is being recursively called twice, except for the base case, which only calls the function one time. For example for an input of the integer 4, for 4 discs, the function is called twice for each disc, except for the last disc which only calls the function one last time.
+	Another question proposed is in reference to getting the prime factorization function to print out the prime factors from largest to smallest. I added this option to the code of the function itself to ensure it indeed does what we want it to do, all that is necessary is to mirror the order of the output statements, and move them to immediately AFTER the recursive function’s call.
